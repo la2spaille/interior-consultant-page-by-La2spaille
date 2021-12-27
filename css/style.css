@@ -343,7 +343,6 @@ header {
     background: #ffffff;
     transform: scaleX(0);
     transform-origin: 0 center;
-    transition: all 0.7s, transform-origin 0s;
   }
   .w-header-mobile-nav nav a:not(:first-child):hover span::after {
     transform: scaleX(1);
