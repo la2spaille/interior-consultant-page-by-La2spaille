@@ -21,7 +21,6 @@
     .w-menu {
         display: flex;
         align-items: stretch;
-        align-items: stretch;
         padding: 0 75px 0;
         i {
             cursor: pointer;
@@ -156,17 +155,18 @@
             margin:  0 20px 0 0;
             border-radius: 50%;
         }
-    }
-    .author-nameXjob {
-        h3 {
-            font-size: 12px;
-            line-height: 15px;
+        div {
+            h3 {
+                font-size: 12px;
+                line-height: 15px;
+            }
+            strong {
+                font-size: 10px;
+                line-height: 12px;
+            }
         }
-        strong {
-            font-size: 10px;
-            line-height: 12px;
-        }
     }
+    
 }
 @media (max-width: 450px) {
     header {

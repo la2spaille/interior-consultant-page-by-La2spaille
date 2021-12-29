@@ -251,12 +251,12 @@ header {
   border-radius: 50%;
 }
 
-.author-nameXjob {
+.author-info div {
   display: flex;
   flex-direction: column;
 }
 
-.author-nameXjob h3 {
+.author-info h3 {
   padding: 2.5px 0 0;
   font-family: Montserrat;
   font-style: normal;
@@ -265,7 +265,7 @@ header {
   line-height: 17px;
 }
 
-.author-nameXjob strong {
+.author-info strong {
   padding: 7.5px  0 0;
   font-family: Montserrat;
   font-style: normal;
@@ -288,7 +288,6 @@ header {
   }
   .w-menu {
     display: flex;
-    align-items: stretch;
     align-items: stretch;
     padding: 0 75px 0;
   }
@@ -416,11 +415,11 @@ header {
     margin: 0 20px 0 0;
     border-radius: 50%;
   }
-  .author-nameXjob h3 {
+  .author-info div h3 {
     font-size: 12px;
     line-height: 15px;
   }
-  .author-nameXjob strong {
+  .author-info div strong {
     font-size: 10px;
     line-height: 12px;
   }
