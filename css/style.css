@@ -16,6 +16,7 @@
 body {
   min-height: 100vh;
   position: relative;
+  overflow-x: hidden;
   color: #ffffff;
   background: #181719;
 }
@@ -182,10 +183,17 @@ main {
 }
 
 .w-2-units-wrapper-left h1 {
+  display: flex;
   font-family: 'Lora' , serif;
   font-weight: 500;
   font-size: 48px;
   line-height: 61px;
+  overflow: hidden;
+}
+
+.w-2-units-wrapper-left h1 span {
+  transition: 1s 2.8s;
+  transform: translateY(50px);
 }
 
 .w-2-units-wrapper-left p {
@@ -195,22 +203,28 @@ main {
   font-weight: normal;
   font-size: 24px;
   line-height: 29px;
+  opacity: 0;
+  transition: 1s 3.1s;
+  transform: translateY(30px);
 }
 
-.w-2-units-wrapper-left span {
+.w-2-units-wrapper-left > span {
   margin: 45px 0 0;
   font-family: 'Montserrat', sans-serif;
   font-weight: bold;
   font-size: 18px;
   line-height: 22px;
+  opacity: 0;
+  transition: 1s 3.4s;
+  transform: translateY(30px);
 }
 
-.w-2-units-wrapper-left span a {
+.w-2-units-wrapper-left > span a {
   display: flex;
   align-items: center;
 }
 
-.w-2-units-wrapper-left span a::after {
+.w-2-units-wrapper-left > span a::after {
   content: "\e941";
   font-family: 'Material Icons';
   padding: 0 0 0 15px;
@@ -221,8 +235,22 @@ main {
   animation-play-state: paused;
 }
 
-.w-2-units-wrapper-left span a:hover::after {
+.w-2-units-wrapper-left > span a:hover::after {
   animation-play-state: running;
+}
+
+.w-2-units-wrapper-left.is-active h1 span {
+  transform: translateY(0);
+}
+
+.w-2-units-wrapper-left.is-active p {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.w-2-units-wrapper-left.is-active > span {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 @keyframes move {
@@ -246,6 +274,25 @@ main {
 .w-2-units-wrapper-right img {
   height: auto;
   width: 100%;
+  transform: translateX(100%);
+  opacity: 0;
+  transition: 1s 1.5s;
+}
+
+.w-2-units-wrapper-right .w-author-card {
+  transition: 1s 2.5s;
+  opacity: 0;
+  transform: scale(1.2) translateY(60%);
+}
+
+.w-2-units-wrapper-right.is-active img {
+  transform: translateX(0);
+  opacity: 1;
+}
+
+.w-2-units-wrapper-right.is-active .w-author-card {
+  opacity: 1;
+  transform: scale(1) translateY(60%);
 }
 
 .w-author-card {

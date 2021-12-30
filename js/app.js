@@ -14,19 +14,26 @@ closeBtn.addEventListener('click', (e) => {
     headerNavMobile.classList.remove('is-active')
     e.stopPropagation()
 })
-// var animElement = document.querySelectorAll('.anim-element')
-// var windowH = window.innerHeight
-// var scrollToop = window.scrollTop
-// var elementOffset = animElement.scrollTop
-// var distance = elementOffset - scrollToop
-// // window.addEventListener('load', (e) => {
-//     animElement.forEach(element => {
-//         window.addEventListener('scroll', (e) => {
-//             if (distance < 800){
-//                 element.classList.add('is-active')
-//             }
-//             e.stopPropagation()
-//         })
-//     })
-// //     e.stopPropagation()
-// // })
+
+const ratio = .01
+const options = {
+    root: null,
+    rootMargin: '0px',
+    threshold: ratio
+}
+const handleIntersect = function (entries, observer) {
+    entries.forEach(function(entry){
+        if (entry.intersectionRatio > ratio) {
+            entry.target.classList.add('is-active')
+            observer.unobserve(entry.target)
+        }
+    })
+}
+
+const observer = new IntersectionObserver(handleIntersect,options)
+window.addEventListener('load', (e) => {
+    document.querySelectorAll('.anim-element').forEach(function(r) {
+        observer.observe(r)
+    })
+    e.stopPropagation()
+})

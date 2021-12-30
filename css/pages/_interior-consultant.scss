@@ -4,10 +4,17 @@
     padding: 150px 0 0;
     width: 410px;
     h1 {
+        display: flex;
         font-family: 'Lora' , serif;
         font-weight: 500;
         font-size: 48px;
         line-height: 61px;
+        overflow: hidden;
+        span {
+            transition: 1s 2.8s;
+            transform: translateY(50px);
+        }
+        
     }
     p {
         padding: 40px 0 0;
@@ -16,13 +23,20 @@
         font-weight: normal;
         font-size: 24px;
         line-height: 29px;
+        opacity: 0 ;
+        transition: 1s 3.1s;
+        transform: translateY(30px);
+        
     }
-    span {
+    > span {
         margin: 45px 0 0;
         font-family: 'Montserrat', sans-serif;
         font-weight: bold;
         font-size: 18px;
         line-height: 22px;
+        opacity: 0 ;
+        transition: 1s 3.4s;
+        transform: translateY(30px);
         a{
             display: flex;
             align-items: center;
@@ -44,6 +58,21 @@
         }
            
     }
+    &.is-active {
+        h1 {
+            span {
+                transform: translateY(0);
+            }
+        }
+        p {
+            opacity:1;
+            transform: translateY(0);
+        }
+        > span {
+            opacity:1;
+            transform: translateY(0);
+        }
+    }
 }
 @keyframes move {
     0% {
@@ -63,6 +92,24 @@
     img {
         height: auto;
         width :100%;
+        transform: translateX(100%);
+        opacity: 0;
+        transition: 1s 1.5s;
+    }
+    .w-author-card {
+        transition: 1s 2.5s;
+        opacity: 0;
+        transform: scale(1.2) translateY(60%);
+    }
+    &.is-active {
+        img {
+            transform: translateX(0);
+            opacity: 1;
+        }
+        .w-author-card {
+            opacity: 1;
+            transform: scale(1) translateY(60%);
+        }
     }
 }
 .w-author-card {
@@ -157,9 +204,3 @@
         clip-path: inset(0 0 100% 0);
     }
 }
-// .anim-element {
-//     opacity: 0 ;
-//     &.is-active {
-//         opacity:1;
-//     }
-// }
