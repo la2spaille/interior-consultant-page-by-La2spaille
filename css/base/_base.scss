@@ -18,3 +18,9 @@ body {
     color: $white;
     background: $darkGray;
 }
+i {
+    font-style: normal;
+    &::after {
+        font-family: 'Material Icons';
+    }
+}

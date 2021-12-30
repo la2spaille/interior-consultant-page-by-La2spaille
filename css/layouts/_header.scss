@@ -10,7 +10,9 @@ header {
 }
 .w-header-logo {
     padding: 0 0 0 75px;
+    transform: translateY(4px);
 }
+
 #logo {
     padding: 8px;
     color: $white;
@@ -67,7 +69,7 @@ header {
                         background: $white;
                         transform: scaleX(0);
                         transform-origin: 0 center;
-                        transition: all 0.7s, transform-origin 0s;
+                        transition: all 0.7s ease-out;
                     }
                 }
                 &:hover {

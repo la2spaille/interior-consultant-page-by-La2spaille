@@ -17,20 +17,43 @@
         font-size: 24px;
         line-height: 29px;
     }
-    a {
+    span {
         margin: 45px 0 0;
         font-family: 'Montserrat', sans-serif;
         font-weight: bold;
         font-size: 18px;
         line-height: 22px;
-        i{
-            content: "\e941";
-            font-family:  'Google font';
-            padding: 0 0 0 15px;
-            font-weight: bold;
-            font-size: 18px;
-            line-height: 22px;
+        a{
+            display: flex;
+            align-items: center;
+            &::after {
+                content: "\e941";
+                font-family: 'Material Icons';
+                padding: 0 0 0 15px;
+                font-weight: bold;
+                font-size: 18px;
+                line-height: 22px;
+                animation: move 2s infinite ease-in-out;
+                animation-play-state: paused;
+            }
+            &:hover {
+                &::after {
+                    animation-play-state: running;
+                }
+            }
         }
+           
+    }
+}
+@keyframes move {
+    0% {
+        transform: translateX(0px);
+    }
+    50% {
+        transform: translateX(5px);
+    }
+    100% {
+        transform: translateX(0px);
     }
 }
 .w-2-units-wrapper-right {
@@ -94,3 +117,49 @@
         color: #828282;
     }
 }
+#loader {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 100vw;
+    z-index: 3;
+    background: $white;
+    clip-path: inset(0 0 0 0);
+    transition: 1s ease-in;
+    .w-header-logo {
+        padding: 0;
+        transform: scale(2.5);
+        a {
+            padding: 8px;
+            color: $darkGray;
+            font-family: 'Crimson Pro', serif;
+            font-weight: 200;
+            font-size: 14px;
+            line-height: 16px;
+            position: relative;
+            &::after {
+                content: '';
+                display: block;
+                width: 2px;
+                height: 2px;
+                position: absolute;
+                bottom: -1px;
+                background: $darkGray;
+                animation: select 2.8s infinite;
+            }
+        }
+    }
+    &.load {
+        clip-path: inset(0 0 100% 0);
+    }
+}
+// .anim-element {
+//     opacity: 0 ;
+//     &.is-active {
+//         opacity:1;
+//     }
+// }
