@@ -394,7 +394,7 @@ main {
   }
   .w-menu i::after {
     content: '\e5d2';
-    font-size: 50px;
+    font-size: 35px;
   }
   .w-header-mobile-nav {
     display: flex;
@@ -468,7 +468,7 @@ main {
     font-family: 'Material Icons';
     content: '\e5cd';
     color: #ffffff;
-    font-size: 50px;
+    font-size: 35px;
   }
   main {
     padding: 90px 0 200px;
@@ -533,19 +533,39 @@ main {
   }
   .w-header-logo {
     padding: 12px;
+    transform: translateX(0);
   }
   .w-menu {
     padding: 0 12px 0;
   }
   .w-header-mobile-nav-close {
-    right: 20px;
-    top: 20px;
+    right: 7.5px;
+    top: 15px;
   }
   main {
     padding: 90px 0 185px;
   }
   .l-2-units-wrapper {
     padding: 0 12px;
+  }
+  .w-2-units-wrapper-left {
+    padding: 0;
+  }
+  .w-2-units-wrapper-left h1 {
+    font-weight: 500;
+    font-size: 36px;
+    line-height: 46px;
+  }
+  .w-2-units-wrapper-left p {
+    font-size: 14px;
+    line-height: 17px;
+  }
+  .w-2-units-wrapper-left span {
+    font-size: 18px;
+    line-height: 22px;
+  }
+  .w-2-units-wrapper-right {
+    padding: 25px 0 0;
   }
 }
 /*# sourceMappingURL=style.css.map */
