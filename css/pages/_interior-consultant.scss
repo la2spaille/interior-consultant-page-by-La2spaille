@@ -202,5 +202,6 @@
     }
     &.load {
         clip-path: inset(0 0 100% 0);
+        visibility: hidden;
     }
 }
